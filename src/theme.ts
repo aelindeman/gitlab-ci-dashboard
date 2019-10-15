@@ -1,8 +1,9 @@
 import createPalette from "@material-ui/core/styles/createPalette";
 import createTypography from "@material-ui/core/styles/createTypography";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
-import { blueGrey, teal } from "@material-ui/core/colors";
 import createSpacing from "@material-ui/core/styles/createSpacing";
+import blueGrey from "@material-ui/core/colors/blueGrey";
+import teal from "@material-ui/core/colors/teal";
 
 export const palette = createPalette({
   type: "dark",
