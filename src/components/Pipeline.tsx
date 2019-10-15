@@ -48,7 +48,10 @@ export interface PipelineState {
   jobs?: JobData[];
 }
 
-export default class Pipeline extends React.Component<PipelineProps, PipelineState> {
+export default class Pipeline extends React.Component<
+  PipelineProps,
+  PipelineState
+> {
   private refresher?: NodeJS.Timeout;
 
   public state: PipelineState = {
@@ -90,18 +93,18 @@ export default class Pipeline extends React.Component<PipelineProps, PipelineSta
   public renderStage = (
     jobs: JobData[],
     projectId: ProjectId,
-    pipelineId: PipelineId,
+    pipelineId: PipelineId
   ) =>
     _.map(jobs, job => (
       <ListItem key={job.id}>
-        <Job projectId={projectId} pipelineId={pipelineId} data={job}/>
+        <Job projectId={projectId} pipelineId={pipelineId} data={job} />
       </ListItem>
     ));
 
   public renderJobs = (
     jobs: JobData[],
     projectId: ProjectId,
-    pipelineId: PipelineId,
+    pipelineId: PipelineId
   ) =>
     _.map(_.groupBy(jobs, "stage"), (stage, name) => (
       <Grid key={name} item>
@@ -141,7 +144,7 @@ export default class Pipeline extends React.Component<PipelineProps, PipelineSta
             #{pipelineId}
           </Link>
           <Typography variant="h4" style={{ color }}>
-            <StatusIcon status={status}/>
+            <StatusIcon status={status} />
             {ref}
           </Typography>
           <Typography variant="subtitle1" color="textPrimary">

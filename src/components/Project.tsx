@@ -54,9 +54,7 @@ export default class Project extends React.Component<Props, State> {
       .catch(console.warn);
   };
 
-  public renderListProblem = (text: string) => (
-    <Typography>{text}</Typography>
-  );
+  public renderListProblem = (text: string) => <Typography>{text}</Typography>;
 
   public renderPipelines = (pipelines: PipelineData[], projectId: ProjectId) =>
     _.map(pipelines, p => (

@@ -39,7 +39,7 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "lint": "prettier --check",
+    "lint": "prettier {src,test}/**/*",
     "start": "webpack-dev-server --mode development",
     "test": "jest"
   }

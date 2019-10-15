@@ -31,8 +31,8 @@ const App = (): React.ReactElement => {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
-      <Project projectId={config.project} api={api}/>
+      <CssBaseline />
+      <Project projectId={config.project} api={api} />
     </ThemeProvider>
   );
 };

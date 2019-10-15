@@ -60,7 +60,7 @@ const Job: React.FC<JobProps> = (props: JobProps) => {
         component="a"
         href={web_url}
         label={label(name, duration)}
-        icon={<StatusIcon status={status}/>}
+        icon={<StatusIcon status={status} />}
         color="primary"
       />
     </ThemeProvider>

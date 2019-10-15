@@ -28,8 +28,11 @@ describe("hash", () => {
   });
 
   describe(".valid()", () => {
-    it.each(valid)("should return true with a parsable hash string for %s", source => {
-      expect(hash.valid(source)).toBeTruthy();
-    });
+    it.each(valid)(
+      "should return true with a parsable hash string for %s",
+      source => {
+        expect(hash.valid(source)).toBeTruthy();
+      }
+    );
   });
 });
