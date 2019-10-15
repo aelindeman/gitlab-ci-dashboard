@@ -18,6 +18,7 @@ install:
 test:
   stage: test
   script:
+    - yarn audit
     - yarn lint --check
     - yarn test
 
