@@ -3,6 +3,7 @@ image: node:12-alpine
 cache:
   key: project
   paths:
+    - .yarn
     - node_modules
 
 stages:
@@ -13,7 +14,7 @@ stages:
 install:
   stage: install
   script:
-    - yarn install --frozen-lockfile
+    - yarn install --frozen-lockfile --cache-folder .yarn
 
 test:
   stage: test
