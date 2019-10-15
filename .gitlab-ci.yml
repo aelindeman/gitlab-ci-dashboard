@@ -1,0 +1,32 @@
+image: node:12-alpine
+
+cache:
+  key: project
+  paths:
+    - node_modules
+
+stages:
+  - install
+  - test
+  - pages
+
+install:
+  stage: install
+  script:
+    - yarn install --frozen-lockfile
+
+test:
+  stage: test
+  script:
+    - yarn lint --check
+    - yarn test
+
+pages:
+  stage: pages
+  script:
+    - yarn build --mode='production'
+  artifacts:
+    paths:
+      - dist
+  only:
+    - master
