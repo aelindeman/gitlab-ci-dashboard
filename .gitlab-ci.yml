@@ -27,8 +27,9 @@ pages:
   stage: pages
   script:
     - yarn build --mode='production'
+    - mv dist public
   artifacts:
     paths:
-      - dist
+      - public
   only:
     - master
