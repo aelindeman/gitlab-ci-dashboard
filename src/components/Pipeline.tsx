@@ -19,28 +19,15 @@ export interface PipelineProps {
 }
 
 export interface PipelineData {
+  duration: number;
   id: PipelineId;
-  status: Status;
   ref: string;
   sha: string;
-  before_sha: string;
-  tag: boolean;
-  yaml_errors?: boolean;
+  started_at: string;
+  status: Status;
   user: {
     name: string;
-    username: string;
-    id: number;
-    state: string;
-    avatar_url: string;
-    web_url: string;
   };
-  created_at: string;
-  updated_at: string;
-  started_at: string;
-  finished_at: string;
-  committed_at: string;
-  duration: number;
-  coverage: number;
   web_url: string;
 }
 
@@ -54,9 +41,7 @@ export default class Pipeline extends React.Component<
 > {
   private refresher?: NodeJS.Timeout;
 
-  public state: PipelineState = {
-    jobs: undefined,
-  };
+  public state: PipelineState = {};
 
   public componentDidMount = (): void => {
     this.getJobs();

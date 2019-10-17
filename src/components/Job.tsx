@@ -1,5 +1,5 @@
 import React from "react";
-import { PipelineId, ProjectId } from "gitlab";
+import { JobId, PipelineId, ProjectId } from "gitlab";
 import moment from "moment";
 import Chip from "@material-ui/core/Chip";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
@@ -14,17 +14,12 @@ export interface JobProps {
 }
 
 export interface JobData {
-  id: number;
-  allow_failure: boolean;
-  created_at: string;
-  started_at: string;
-  finished_at: string;
   duration: number;
+  id: JobId;
   name: string;
   ref: string;
   stage: string;
   status: Status;
-  tag: boolean;
   web_url: string;
 }
 
