@@ -6,12 +6,12 @@ import _ from "lodash";
 import React from "react";
 import Pipeline, { PipelineData } from "./Pipeline";
 
-interface Props {
+interface ProjectProps {
   api: Gitlab;
   projectId: ProjectId;
 }
 
-interface State {
+interface ProjectState {
   pipelines?: PipelineData[];
 }
 
@@ -21,10 +21,13 @@ const PipelineContainer = withStyles((theme: Theme) => ({
   },
 }))(Box);
 
-export default class Project extends React.Component<Props, State> {
+export default class Project extends React.Component<
+  ProjectProps,
+  ProjectState
+> {
   private refresher?: NodeJS.Timeout;
 
-  public state: State = {};
+  public state: ProjectState = {};
 
   public componentDidMount = (): void => {
     this.getPipelines();
