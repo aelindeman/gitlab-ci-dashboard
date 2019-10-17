@@ -1,3 +1,4 @@
+import { JobScope } from "gitlab";
 import red from "@material-ui/core/colors/red";
 import orange from "@material-ui/core/colors/orange";
 import green from "@material-ui/core/colors/green";
@@ -11,20 +12,9 @@ import PlayCircleOutlineRounded from "@material-ui/icons/PlayCircleOutlineRounde
 import RadioButtonUncheckedRounded from "@material-ui/icons/RadioButtonUncheckedRounded";
 import RemoveCircleOutlineRounded from "@material-ui/icons/RemoveCircleOutlineRounded";
 
-export const Statuses = [
-  "created",
-  "manual",
-  "pending",
-  "running",
-  "success",
-  "failed",
-  "skipped",
-  "canceled",
-] as const;
+export type Status = JobScope;
 
-export type Status = typeof Statuses[number];
-
-export const StatusColor = {
+export const StatusColor: {[key in Status]: string} = {
   created: indigo[400],
   manual: indigo[400],
   pending: grey[400],

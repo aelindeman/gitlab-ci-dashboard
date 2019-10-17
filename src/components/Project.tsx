@@ -24,9 +24,7 @@ const PipelineContainer = withStyles((theme: Theme) => ({
 export default class Project extends React.Component<Props, State> {
   private refresher?: NodeJS.Timeout;
 
-  public state: State = {
-    pipelines: undefined,
-  };
+  public state: State = {};
 
   public componentDidMount = (): void => {
     this.getPipelines();
