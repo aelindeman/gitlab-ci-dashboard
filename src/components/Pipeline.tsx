@@ -1,13 +1,13 @@
-import React from "react";
-import _ from "lodash";
-import { Gitlab, PipelineId, ProjectId } from "gitlab";
-import moment from "moment";
 import Grid from "@material-ui/core/Grid";
-import List from "@material-ui/core/List";
-import ListSubheader from "@material-ui/core/ListSubheader";
-import ListItem from "@material-ui/core/ListItem";
-import Typography from "@material-ui/core/Typography";
 import Link from "@material-ui/core/Link";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import Typography from "@material-ui/core/Typography";
+import { Gitlab, PipelineId, ProjectId } from "gitlab";
+import _ from "lodash";
+import moment from "moment";
+import React from "react";
 import { Status, StatusColor } from "../status";
 import Job, { JobData } from "./Job";
 import StatusIcon from "./StatusIcon";
@@ -86,7 +86,7 @@ export default class Pipeline extends React.Component<
 
   public renderListProblem = (text: string) => (
     <Grid item>
-      <Typography>{text}</Typography>
+      <Typography color="error">{text}</Typography>
     </Grid>
   );
 
@@ -122,15 +122,6 @@ export default class Pipeline extends React.Component<
     } = this.props;
     const { jobs } = this.state;
     const color = StatusColor[status];
-    let contents: React.ReactNode;
-
-    if (jobs && jobs.length) {
-      contents = this.renderJobs(jobs, projectId, pipelineId);
-    } else if (jobs) {
-      contents = this.renderListProblem("No jobs.");
-    } else {
-      contents = this.renderListProblem("Loading...");
-    }
 
     return (
       <Grid container>
@@ -155,7 +146,11 @@ export default class Pipeline extends React.Component<
           </Typography>
         </Grid>
         <Grid item md={9}>
-          <Grid container>{contents}</Grid>
+          <Grid container>
+            {jobs && jobs.length
+              ? this.renderJobs(jobs, projectId, pipelineId)
+              : this.renderListProblem(jobs ? "No jobs." : "Loading...")}
+          </Grid>
         </Grid>
       </Grid>
     );
