@@ -1,5 +1,5 @@
-import React from "react";
 import { SvgIconProps } from "@material-ui/core/SvgIcon";
+import React from "react";
 import { Status, StatusIcon as StatusIconComponent } from "../status";
 
 interface StatusIconProps extends SvgIconProps {

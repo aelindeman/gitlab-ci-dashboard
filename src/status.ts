@@ -11,15 +11,18 @@ import PlayCircleOutlineRounded from "@material-ui/icons/PlayCircleOutlineRounde
 import RadioButtonUncheckedRounded from "@material-ui/icons/RadioButtonUncheckedRounded";
 import RemoveCircleOutlineRounded from "@material-ui/icons/RemoveCircleOutlineRounded";
 
-export type Status =
-  | "created"
-  | "manual"
-  | "pending"
-  | "running"
-  | "success"
-  | "failed"
-  | "skipped"
-  | "canceled";
+export const Statuses = [
+  "created",
+  "manual",
+  "pending",
+  "running",
+  "success",
+  "failed",
+  "skipped",
+  "canceled",
+] as const;
+
+export type Status = typeof Statuses[number];
 
 export const StatusColor = {
   created: indigo[400],
