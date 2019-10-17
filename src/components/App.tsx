@@ -2,8 +2,8 @@ import React from "react";
 import { Gitlab } from "gitlab";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import CssBaseline from "@material-ui/core/CssBaseline/CssBaseline";
-import hash from "../hash";
-import theme from "../theme";
+import hash from "../utils/hash";
+import theme from "../utils/theme";
 import Project from "./Project";
 
 interface Config {

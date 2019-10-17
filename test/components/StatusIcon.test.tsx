@@ -1,7 +1,7 @@
 import createRender from "@material-ui/core/test-utils/createRender";
 import React from "react";
 import StatusIcon from "../../src/components/StatusIcon";
-import { Status } from "../../src/status";
+import { Status } from "../../src/utils/status";
 
 describe("<StatusIcon />", () => {
   const muiRender = createRender();

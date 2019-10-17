@@ -8,7 +8,7 @@ import { Gitlab, PipelineId, ProjectId } from "gitlab";
 import _ from "lodash";
 import moment from "moment";
 import React from "react";
-import { Status, StatusColor } from "../status";
+import { Status, StatusColor } from "../utils/status";
 import Job, { JobData } from "./Job";
 import StatusIcon from "./StatusIcon";
 
@@ -109,7 +109,7 @@ export default class Pipeline extends React.Component<
     const color = StatusColor[status];
 
     return (
-      <Grid container>
+      <Grid container wrap="nowrap">
         <Grid item md={3}>
           <Link
             variant="subtitle2"

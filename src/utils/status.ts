@@ -10,7 +10,7 @@ import HourglassEmptyRounded from '@material-ui/icons/HourglassEmptyRounded';
 import PlayCircleOutlineRounded from '@material-ui/icons/PlayCircleOutlineRounded';
 import RadioButtonUncheckedRounded from '@material-ui/icons/RadioButtonUncheckedRounded';
 import RemoveCircleOutlineRounded from '@material-ui/icons/RemoveCircleOutlineRounded';
-import { JobScope } from 'gitlab';
+import { JobScope } from 'gitlab/dist/services';
 
 export type Status = JobScope;
 

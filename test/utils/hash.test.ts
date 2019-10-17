@@ -1,4 +1,4 @@
-import hash from "../src/hash";
+import hash from "../../src/utils/hash";
 
 const valid = [
   "#foo=a;bar=b;baz=c",

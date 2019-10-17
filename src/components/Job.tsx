@@ -4,7 +4,7 @@ import moment from "moment";
 import Chip from "@material-ui/core/Chip";
 import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import createMuiTheme, { Theme } from "@material-ui/core/styles/createMuiTheme";
-import { Status, StatusColor } from "../status";
+import { Status, StatusColor } from "../utils/status";
 import StatusIcon from "./StatusIcon";
 
 export interface JobProps {
