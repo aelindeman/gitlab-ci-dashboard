@@ -21,8 +21,18 @@ describe("hash", () => {
     });
   });
 
+  describe(".set()", () => {
+    it("should return a hash string for an object", () => {
+      expect(hash.set({ foo: "a", bar: "b" })).toEqual("#foo=a;bar=b");
+    });
+    it("should set window.location.hash", () => {
+      hash.set({ foo: "a", bar: "b" });
+      expect(window.location.hash).toEqual("#foo=a;bar=b");
+    })
+  });
+
   describe(".keys()", () => {
-    it.each(valid)("should return an object for %s", source => {
+    it.each(valid)("should return an array for %s", source => {
       expect(hash.keys(source)).toStrictEqual(["foo", "bar", "baz"]);
     });
   });
